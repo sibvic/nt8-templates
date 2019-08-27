@@ -28,3 +28,7 @@ Usage
     {
         output.Set(val[0], val[1], IsUp() ? 0 : 1);
     }
+
+## Averages
+
+Set of different smoothing types.
