@@ -1,3 +1,4 @@
+#region Alert
 // Signaler 1.1
 void InitAlert()
 {
@@ -16,23 +17,19 @@ public bool AlertPlaySound
 
 [NinjaScriptProperty]
 [Display(Name="Sound", Order = 1001, GroupName = "Alert")]
-public string AlertSoundName
-{ get; set; }
+public string AlertSoundName { get; set; }
 
 [NinjaScriptProperty]
 [Display(Name="Send email", Order = 1002, GroupName = "Alert")]
-public bool AlertSendEmail
-{ get; set; }
+public bool AlertSendEmail { get; set; }
 
 [NinjaScriptProperty]
 [Display(Name="Email", Order = 1003, GroupName = "Alert")]
-public string AlertEmail
-{ get; set; }
+public string AlertEmail { get; set; }
 
 [NinjaScriptProperty]
 [Display(Name="Print debug output", Order = 1100, GroupName = "Alert")]
-public bool AlertDebug
-{ get; set; }
+public bool AlertDebug { get; set; }
 
 class Signaler
 {
@@ -43,8 +40,10 @@ class Signaler
     bool _alertDebug;
     Indicator _indicator;
 
-    public void Init(Indicator indicator, bool alertPlaySound, string alertSoundName, bool alertSendEmail, string alertEmail, bool alertDebug)
+    public void Init(Indicator indicator, bool alertPlaySound, string alertSoundName, bool alertSendEmail, 
+        string alertEmail, bool alertDebug)
     {
+        _indicator = indicator;
         _alertPlaySound = alertPlaySound;
         _alertSoundName = alertSoundName;
         _alertSendEmail = alertSendEmail;
@@ -67,3 +66,4 @@ class Signaler
             _indicator.Print(message);
     }
 }
+#endregion
