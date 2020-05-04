@@ -21,9 +21,9 @@ class MultiColorStream
             }
             else
             {
-                _streams[i].IsValidDataPoint(0);
+                _streams[i].Reset(0);
                 if (_streams[i][2] == 0)
-                    _streams[i].IsValidDataPoint(1);
+                    _streams[i].Reset(1);
             }
         }
     }
